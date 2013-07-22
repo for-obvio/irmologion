@@ -1,8 +1,8 @@
 === Irmologion ===
 Contributors: Alexey Vidanov , versusbassz
-Tags: cyrillic, slavonic, administrator
+Tags: cyrillic, slavonic, irmologion, font, church, orthodox
 Requires at least: 3.5
-Tested up to: 3.5.1
+Tested up to: 3.5.2
 Stable tag: 1.2
 
 This Wordpress plugin enables to add texts in church slavonic to Wordpress blogs.
