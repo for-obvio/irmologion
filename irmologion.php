@@ -66,26 +66,6 @@
 					'title' => 'Церковно-славянский стиль',
 					'block' => 'p',
 					'classes' => 'slavic'
-				),
-				array(
-					'title' => '.s1',
-					'inline' => 'span',
-					'classes' => 's1'
-				),
-				array(
-					'title' => 'div.slavic .kinovar',
-					'inline' => 'span',
-					'classes' => 'kinovar'
-				),
-				array(
-					'title' => 'div.slavic .slavic_gray',
-					'inline' => 'span',
-					'classes' => 'slavic_gray'
-				),
-				array(
-					'title' => 'span.slavic_greek',
-					'inline' => 'span',
-					'classes' => 'slavic_greek'
 				)
 			);
 			// Insert the array, JSON ENCODED, into 'style_formats'
