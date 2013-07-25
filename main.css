@@ -37,11 +37,11 @@
     font-family: "Hirmos ieUcs", slavonic_font, slavonic_font_ie, sans-serif;
     font-size: 21px;
 }
-.slavic .kinovar { color:red; }
-.slavic .slavic_gray { color:gray; }
 
 
 /* =========================================
    Deprecated
    ======================================== */
 .s1 { color:red; }
+.slavic .kinovar { color:red; }
+.slavic .slavic_gray { color:gray; }
