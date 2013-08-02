@@ -31,9 +31,11 @@ Church Slavonic is liturgical language of the Russian Orthodox Church, Ukrainian
 
 == Changelog ==
 
-= 1.2 =
-* Fixed some bugs
-*
+= 1.2.0 =
+* Fixed many bugs of previous version
+* All old CSS classes and properties except .slavonic are deprecated and will be deleted in v2.0.0
+* Plugin code has been completely rewritten
+* [Github repository](https://github.com/versusbassz/irmologion/) added
 
 = 1.01 =
 * Font size increased
