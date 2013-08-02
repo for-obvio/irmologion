@@ -2,8 +2,9 @@
 Contributors: Alexey Vidanov , versusbassz
 Tags: cyrillic, slavonic, irmologion, font, church, orthodox
 Requires at least: 3.5
-Tested up to: 3.5.2
-Stable tag: 1.2
+Tested up to: 3.6
+Stable tag: 1.2.0
+License: GPLv2 or later
 
 This Wordpress plugin enables to add texts in church slavonic to Wordpress blogs.
 
@@ -32,6 +33,7 @@ Church Slavonic is liturgical language of the Russian Orthodox Church, Ukrainian
 
 = 1.2 =
 * Fixed some bugs
+*
 
 = 1.01 =
 * Font size increased
