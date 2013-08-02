@@ -1,5 +1,5 @@
 === Irmologion ===
-Contributors: Alexey Vidanov , versusbassz
+Contributors: vidanov, versusbassz
 Tags: cyrillic, slavonic, irmologion, font, church, orthodox
 Requires at least: 3.5
 Tested up to: 3.6
