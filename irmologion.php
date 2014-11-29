@@ -12,15 +12,19 @@
 	*/
 
 
+	add_action( 'wp_enqueue_scripts', 'irmologion_styles' );
+	add_filter( 'mce_css', 'irmologion_css' );
+	add_filter( 'tiny_mce_before_init', 'irmologion_change_tinymce_settings' );
+	add_filter( 'mce_buttons_2', 'irmologion_add_buttons' );
+
+
 	if ( ! function_exists( 'irmologion_styles' ) ) {
 		function irmologion_styles() {
 
 			wp_register_style( 'irmologion', WP_PLUGIN_URL . '/irmologion/main.css' );
 			wp_enqueue_style( 'irmologion' );
-
 		}
 	}
-	add_action( 'wp_enqueue_scripts', 'irmologion_styles' );
 
 
 	if ( ! function_exists( 'irmologion_css' ) ) {
@@ -33,49 +37,37 @@
 			return $mce_css;
 		}
 	}
-	add_filter( 'mce_css', 'irmologion_css' );
 
 
 	if ( ! function_exists( 'irmologion_change_tinymce_settings' ) ) {
-		function irmologion_change_tinymce_settings ( $settings ) {
+		function irmologion_change_tinymce_settings ( $init ) {
 
-			$rows_names = array( 'theme_advanced_buttons1' , 'theme_advanced_buttons2' , 'theme_advanced_buttons3' , 'theme_advanced_buttons4' );
-			$is_styleselect_available = false;
+//			$init['block_formats'] = 'Paragraph=p;Heading 3=h3;Heading 4=h4';
+//			$init['block_formats'] .= 'Irmologion=slavic';
 
-			foreach ( $rows_names as $row ) {
-				if ( isset( $settings[$row] ) && strpos( $settings[$row] , 'styleselect' ) !== false ) {
-					$is_styleselect_available = true;
-				}
-			}
+			$style_formats = array (
+				array( 'title' => 'Irmologion (block)',  'block'  => 'p',    'classes' => 'slavic'),
+				array( 'title' => 'Irmologion (inline)', 'inline' => 'span', 'classes' => 'slavic' ),
 
-			if ( ! $is_styleselect_available ) {
-				$settings['theme_advanced_buttons2'] .= ',styleselect';
-			}
-
-			//Delimit styles by semicolon in format 'Title=classes;' so TinyMCE can use it
-			if ( isset( $settings['theme_advanced_styles'] ) && ! empty( $settings['theme_advanced_styles'] ) ) {
-				$settings['theme_advanced_styles'] .= ';';
-			} else {
-				$settings['theme_advanced_styles'] = '';
-			}
-
-			//Add our new class settings to the TinyMCE $settings array
-			$settings['theme_advanced_styles'] .= 'Церковно-славянский=slavic';
-
-
-			$style_formats = array(
-				// Each array child is a format with it's own settings
-				array(
-					'title' => 'Церковно-славянский стиль',
-					'block' => 'p',
-					'classes' => 'slavic'
-				)
+//			array( 'title' => 'Bold text', 'inline' => 'b' ),
+//			array( 'title' => 'Red header', 'block' => 'h1', 'styles' => array( 'color' => '#ff0000' ) ),
+//			array( 'title' => 'Example 1', 'inline' => 'span', 'classes' => 'example1' ),
 			);
-			// Insert the array, JSON ENCODED, into 'style_formats'
-			$settings['style_formats'] = json_encode( $style_formats );
 
+			$init['style_formats'] = json_encode( $style_formats );
 
-			return $settings;
+			$init['style_formats_merge'] = false;
+
+//			echo '<pre>';print_r( $init );echo '</pre>';
+			return $init;
 		}
 	}
-	add_filter( 'tiny_mce_before_init', 'irmologion_change_tinymce_settings' );
+
+
+	function irmologion_add_buttons ( $buttons ) {
+		array_splice( $buttons, 1, 0, 'styleselect' );
+		return $buttons;
+	}
+
+
+
