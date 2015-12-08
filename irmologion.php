@@ -3,7 +3,7 @@
 	Plugin Name: Irmologion
 	Plugin URI: http://studio.hamburg-hram.de/plugins/irmologion-wordpress-plugin/
 	Description: This WordPress plugin enables to add texts in church slavonic to WordPress blogs.
-	Version: 1.2.0
+	Version: 1.2.1
 
 	Author: Hamburg Church Studio
 	Author URI: http://studio.hamburg-hram.de/
